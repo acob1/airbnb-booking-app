@@ -17,6 +17,10 @@ import 'package:airbnb_booking_app/screens/refer_friend_screen.dart';
 import 'package:airbnb_booking_app/screens/property_detail_screen.dart';
 import 'package:airbnb_booking_app/screens/e_receipt_screen.dart';
 import 'package:airbnb_booking_app/screens/notification_screen.dart';
+import 'package:airbnb_booking_app/screens/help_and_faqs_screen.dart';
+import 'package:airbnb_booking_app/screens/language_screen.dart';
+import 'package:airbnb_booking_app/screens/wallet_screen.dart';
+import 'package:airbnb_booking_app/screens/add_wallet_screen.dart';
 import 'package:airbnb_booking_app/providers/property_provider.dart';
 import 'package:airbnb_booking_app/providers/booking_provider.dart';
 import 'package:airbnb_booking_app/utils/constants.dart';
@@ -66,6 +70,10 @@ class MyApp extends StatelessWidget {
         '/property-detail': (context) => const PropertyDetailScreen(),
         '/e-receipt': (context) => const EReceiptScreen(),
         '/notifications': (context) => const NotificationScreen(),
+        '/help-and-faqs': (context) => const HelpAndFaqsScreen(),
+        '/language': (context) => const LanguageScreen(),
+        '/wallet': (context) => const WalletScreen(),
+        '/add-wallet': (context) => const AddWalletScreen(),
       },
     );
   }

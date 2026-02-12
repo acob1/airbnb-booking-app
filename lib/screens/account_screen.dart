@@ -76,6 +76,13 @@ class _AccountScreenContentState extends State<AccountScreenContent> {
               },
             ),
             _buildMenuItem(
+              icon: Icons.account_balance_wallet_outlined,
+              title: 'Wallet',
+              onTap: () {
+                Navigator.pushNamed(context, '/wallet');
+              },
+            ),
+            _buildMenuItem(
               icon: Icons.person_outline,
               title: 'Edit Profile',
               onTap: () {},
@@ -90,12 +97,16 @@ class _AccountScreenContentState extends State<AccountScreenContent> {
             _buildMenuItem(
               icon: Icons.settings_outlined,
               title: 'Settings',
-              onTap: () {},
+              onTap: () {
+                Navigator.pushNamed(context, '/language');
+              },
             ),
             _buildMenuItem(
               icon: Icons.help_outline,
               title: 'Help & Support',
-              onTap: () {},
+              onTap: () {
+                Navigator.pushNamed(context, '/help-and-faqs');
+              },
             ),
             _buildMenuItem(
               icon: Icons.info_outline,
