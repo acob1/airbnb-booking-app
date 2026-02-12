@@ -117,26 +117,35 @@ class _WalletScreenState extends State<WalletScreen> {
                           ),
                         ),
                         // Mastercard Logo
-                        Row(
-                          children: [
-                            Container(
-                              width: 30,
-                              height: 30,
-                              decoration: const BoxDecoration(
-                                color: Colors.red,
-                                shape: BoxShape.circle,
+                        SizedBox(
+                          width: 50,
+                          height: 30,
+                          child: Stack(
+                            children: [
+                              Positioned(
+                                left: 0,
+                                child: Container(
+                                  width: 30,
+                                  height: 30,
+                                  decoration: const BoxDecoration(
+                                    color: Colors.red,
+                                    shape: BoxShape.circle,
+                                  ),
+                                ),
                               ),
-                            ),
-                            Container(
-                              width: 30,
-                              height: 30,
-                              margin: const EdgeInsets.only(left: -10),
-                              decoration: const BoxDecoration(
-                                color: Colors.orange,
-                                shape: BoxShape.circle,
+                              Positioned(
+                                left: 20,
+                                child: Container(
+                                  width: 30,
+                                  height: 30,
+                                  decoration: const BoxDecoration(
+                                    color: Colors.orange,
+                                    shape: BoxShape.circle,
+                                  ),
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ],
                     ),
