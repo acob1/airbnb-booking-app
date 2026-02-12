@@ -85,7 +85,9 @@ class _AccountScreenContentState extends State<AccountScreenContent> {
             _buildMenuItem(
               icon: Icons.person_outline,
               title: 'Edit Profile',
-              onTap: () {},
+              onTap: () {
+                Navigator.pushNamed(context, '/edit-profile');
+              },
             ),
             _buildMenuItem(
               icon: Icons.card_giftcard_outlined,

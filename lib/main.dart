@@ -21,6 +21,7 @@ import 'package:airbnb_booking_app/screens/help_and_faqs_screen.dart';
 import 'package:airbnb_booking_app/screens/language_screen.dart';
 import 'package:airbnb_booking_app/screens/wallet_screen.dart';
 import 'package:airbnb_booking_app/screens/add_wallet_screen.dart';
+import 'package:airbnb_booking_app/screens/edit_profile_screen.dart';
 import 'package:airbnb_booking_app/providers/property_provider.dart';
 import 'package:airbnb_booking_app/providers/booking_provider.dart';
 import 'package:airbnb_booking_app/utils/constants.dart';
@@ -74,6 +75,7 @@ class MyApp extends StatelessWidget {
         '/language': (context) => const LanguageScreen(),
         '/wallet': (context) => const WalletScreen(),
         '/add-wallet': (context) => const AddWalletScreen(),
+        '/edit-profile': (context) => const EditProfileScreen(),
       },
     );
   }
