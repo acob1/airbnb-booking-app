@@ -20,7 +20,6 @@ class AccountScreenContent extends StatefulWidget {
 }
 
 class _AccountScreenContentState extends State<AccountScreenContent> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,10 +27,7 @@ class _AccountScreenContentState extends State<AccountScreenContent> {
       appBar: AppBar(
         backgroundColor: AppColors.white,
         elevation: 0,
-        title: const Text(
-          'Account',
-          style: TextStyle(color: AppColors.black),
-        ),
+        title: const Text('Account', style: TextStyle(color: AppColors.black)),
         centerTitle: true,
         automaticallyImplyLeading: false,
       ),
@@ -48,17 +44,11 @@ class _AccountScreenContentState extends State<AccountScreenContent> {
                 shape: BoxShape.circle,
               ),
               child: const Center(
-                child: Text(
-                  '👩',
-                  style: TextStyle(fontSize: 50),
-                ),
+                child: Text('👩', style: TextStyle(fontSize: 50)),
               ),
             ),
             const SizedBox(height: AppSpacing.md),
-            Text(
-              'Joy',
-              style: AppTextStyles.heading2,
-            ),
+            Text('Joy', style: AppTextStyles.heading2),
             const SizedBox(height: AppSpacing.xs),
             Text(
               'joy@example.com',
@@ -101,14 +91,14 @@ class _AccountScreenContentState extends State<AccountScreenContent> {
               icon: Icons.settings_outlined,
               title: 'Settings',
               onTap: () {
-                Navigator.pushNamed(context, '/language');
+                Navigator.pushNamed(context, '/settings');
               },
             ),
             _buildMenuItem(
-              icon: Icons.help_outline,
-              title: 'Help & Support',
+              icon: Icons.smart_toy_outlined,
+              title: 'Go Property Ai Assistant',
               onTap: () {
-                Navigator.pushNamed(context, '/help-and-faqs');
+                Navigator.pushNamed(context, '/chat-assistant');
               },
             ),
             _buildMenuItem(
@@ -167,10 +157,7 @@ class _AccountScreenContentState extends State<AccountScreenContent> {
                 ),
               ),
             ),
-            Icon(
-              Icons.chevron_right,
-              color: AppColors.textSecondary,
-            ),
+            Icon(Icons.chevron_right, color: AppColors.textSecondary),
           ],
         ),
       ),

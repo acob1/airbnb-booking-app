@@ -246,7 +246,7 @@ class _HomeScreenContentState extends State<HomeScreenContent> {
                             Container(
                               padding: const EdgeInsets.symmetric(
                                 horizontal: AppSpacing.md,
-                                vertical: AppSpacing.sm,
+                                vertical: AppSpacing.md,
                               ),
                               decoration: BoxDecoration(
                                 color: AppColors.white,

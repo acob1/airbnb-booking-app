@@ -47,6 +47,27 @@ class PaymentLocalDataSourceImpl implements PaymentLocalDataSource {
       icon: Icons.credit_card,
       isEnabled: true,
     ),
+    PaymentMethodModel(
+      id: 'MTN',
+      name: 'MTN Mobile Money',
+      description: 'Pay with MTN MoMo. Fast, secure and convenient mobile money payments',
+      icon: Icons.phone_android,
+      isEnabled: true,
+    ),
+    PaymentMethodModel(
+      id: 'Telecel',
+      name: 'Telecel Cash',
+      description: 'Pay with Telecel Cash. Easy mobile money payments from your Telecel wallet',
+      icon: Icons.smartphone,
+      isEnabled: true,
+    ),
+    PaymentMethodModel(
+      id: 'Bank',
+      name: 'Bank Transfer',
+      description: 'Direct bank transfer from your bank account. Secure and reliable',
+      icon: Icons.account_balance,
+      isEnabled: true,
+    ),
   ];
 
   @override

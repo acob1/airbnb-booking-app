@@ -13,6 +13,7 @@ import 'package:airbnb_booking_app/features/profile/presentation/screens/refer_f
 import 'package:airbnb_booking_app/features/settings/presentation/screens/notification_screen.dart';
 import 'package:airbnb_booking_app/features/settings/presentation/screens/help_and_faqs_screen.dart';
 import 'package:airbnb_booking_app/features/settings/presentation/screens/language_screen.dart';
+import 'package:airbnb_booking_app/features/settings/presentation/screens/settings_screen.dart';
 import 'package:airbnb_booking_app/features/wallet/presentation/screens/wallet_screen.dart';
 import 'package:airbnb_booking_app/features/wallet/presentation/screens/add_wallet_screen.dart';
 import 'package:airbnb_booking_app/features/profile/presentation/screens/edit_profile_screen.dart';
@@ -79,6 +80,7 @@ class MyApp extends StatelessWidget {
         '/recommendations-list': (context) => const RecommendationsListScreen(),
         '/featured-list': (context) => const FeaturedListScreen(),
         '/chat-assistant': (context) => const ChatAssistantScreen(),
+        '/settings': (context) => const SettingsScreen(),
       },
     );
   }
