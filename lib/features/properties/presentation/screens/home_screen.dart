@@ -58,74 +58,73 @@ class _HomeScreenContentState extends State<HomeScreenContent> {
         child: Column(
           children: [
             // Header
-            Container(
-              color: AppColors.white,
-              padding: const EdgeInsets.all(AppSpacing.md),
-              child: Row(
-                children: [
-                  // User Avatar
-                  Container(
-                    width: 50,
-                    height: 50,
-                    decoration: BoxDecoration(
-                      color: AppColors.primary,
-                      shape: BoxShape.circle,
-                    ),
-                    child: const Center(
-                      child: Text('👩', style: TextStyle(fontSize: 28)),
-                    ),
-                  ),
-                  const SizedBox(width: AppSpacing.md),
-                  // Greeting
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: [
-                            Text(
-                              'Hello Welcome 👋',
-                              style: AppTextStyles.bodySmall,
-                            ),
-                          ],
-                        ),
-                        const SizedBox(height: 2),
-                        Text(
-                          'joy',
-                          style: AppTextStyles.bodyLarge.copyWith(
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  // Notification Icon
-                  Stack(
-                    children: [
-                      IconButton(
-                        icon: const Icon(Icons.notifications_outlined),
-                        onPressed: () {
-                          Navigator.pushNamed(context, '/notifications');
-                        },
-                      ),
-                      Positioned(
-                        right: 10,
-                        top: 10,
-                        child: Container(
-                          width: 8,
-                          height: 8,
-                          decoration: const BoxDecoration(
-                            color: Colors.red,
-                            shape: BoxShape.circle,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-
+            // Container(
+            //   color: AppColors.white,
+            //   padding: const EdgeInsets.all(AppSpacing.md),
+            //   child: Row(
+            //     children: [
+            //       // User Avatar
+            //       Container(
+            //         width: 50,
+            //         height: 50,
+            //         decoration: BoxDecoration(
+            //           color: AppColors.primary,
+            //           shape: BoxShape.circle,
+            //         ),
+            //         child: const Center(
+            //           child: Text('👩', style: TextStyle(fontSize: 28)),
+            //         ),
+            //       ),
+            //       const SizedBox(width: AppSpacing.md),
+            //       // Greeting
+            //       Expanded(
+            //         child: Column(
+            //           crossAxisAlignment: CrossAxisAlignment.start,
+            //           children: [
+            //             Row(
+            //               children: [
+            //                 Text(
+            //                   'Hello Welcome 👋',
+            //                   style: AppTextStyles.bodySmall,
+            //                 ),
+            //               ],
+            //             ),
+            //             const SizedBox(height: 2),
+            //             Text(
+            //               'joy',
+            //               style: AppTextStyles.bodyLarge.copyWith(
+            //                 fontWeight: FontWeight.bold,
+            //               ),
+            //             ),
+            //           ],
+            //         ),
+            //       ),
+            //       // Notification Icon
+            //       Stack(
+            //         children: [
+            //           IconButton(
+            //             icon: const Icon(Icons.notifications_outlined),
+            //             onPressed: () {
+            //               Navigator.pushNamed(context, '/notifications');
+            //             },
+            //           ),
+            //           Positioned(
+            //             right: 10,
+            //             top: 10,
+            //             child: Container(
+            //               width: 8,
+            //               height: 8,
+            //               decoration: const BoxDecoration(
+            //                 color: Colors.red,
+            //                 shape: BoxShape.circle,
+            //               ),
+            //             ),
+            //           ),
+            //         ],
+            //       ),
+            //     ],
+            //   ),
+            // ),
             Expanded(
               child: ListView(
                 padding: const EdgeInsets.symmetric(vertical: AppSpacing.md),
@@ -244,9 +243,10 @@ class _HomeScreenContentState extends State<HomeScreenContent> {
                             ),
                             const SizedBox(height: AppSpacing.sm),
                             Container(
+                              height: 120,
                               padding: const EdgeInsets.symmetric(
                                 horizontal: AppSpacing.md,
-                                vertical: AppSpacing.md,
+                                vertical: AppSpacing.sm,
                               ),
                               decoration: BoxDecoration(
                                 color: AppColors.white,
@@ -256,20 +256,28 @@ class _HomeScreenContentState extends State<HomeScreenContent> {
                               ),
                               child: Column(
                                 children: [
-                                  Row(
-                                    children: [
-                                      Expanded(
-                                        child: Text(
-                                          'Ask about your health...',
-                                          style: AppTextStyles.bodyMedium
-                                              .copyWith(
-                                                color: AppColors.textSecondary,
-                                              ),
-                                        ),
-                                      ),
-                                    ],
+                                  TextField(
+                                    decoration: InputDecoration(
+                                      hintText: 'Ask about your apartment...',
+                                      hintStyle: AppTextStyles.bodyMedium
+                                          .copyWith(
+                                            color: AppColors.textSecondary,
+                                          ),
+                                      border: InputBorder.none,
+                                      enabledBorder: InputBorder.none,
+                                      focusedBorder: InputBorder.none,
+                                      contentPadding: EdgeInsets.zero,
+                                    ),
+                                    onSubmitted: (value) {
+                                      final text = value.trim();
+                                      Navigator.pushNamed(
+                                        context,
+                                        '/chat-assistant',
+                                        arguments: text.isNotEmpty ? text : null,
+                                      );
+                                    },
                                   ),
-                                  const SizedBox(height: AppSpacing.sm),
+                                  const Spacer(),
                                   Row(
                                     children: [
                                       Icon(

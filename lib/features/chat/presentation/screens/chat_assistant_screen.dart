@@ -36,11 +36,18 @@ class _ChatAssistantScreenState extends State<ChatAssistantScreen> {
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       final provider = context.read<PropertyProvider>();
       await provider.loadProperties();
-      if (mounted) {
-        _allProperties = provider.properties;
-        _addBotMessage(
-          'Hello! I\'m GoProperty AI assistant. I can help you find apartments, villas, and houses at the best prices. What are you looking for?',
-        );
+      if (!mounted) return;
+      _allProperties = provider.properties;
+      _addBotMessage(
+        'Hello! I\'m GoProperty AI assistant. I can help you find apartments, villas, and houses at the best prices. What are you looking for?',
+      );
+
+      // Check if an initial message was passed from home screen
+      final initialMessage =
+          ModalRoute.of(context)?.settings.arguments as String?;
+      if (initialMessage != null && initialMessage.isNotEmpty) {
+        _messageController.text = initialMessage;
+        _sendMessage();
       }
     });
   }
